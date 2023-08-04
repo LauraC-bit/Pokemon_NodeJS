@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 12873892312,
+      "value": "my first todo",
+      "completed": false
+    },
+    {
+      "id": 930240234,
+      "value": "do this",
+      "completed": true
+    },
+    {
+      "id": 905892,
+      "value": "todo nbr 3",
+      "completed": false
+    }
+  ]
+}
