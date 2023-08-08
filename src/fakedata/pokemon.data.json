@@ -5,95 +5,113 @@
   "results": [
     {
       "name": "bulbasaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/1/"
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "id": 1547251
     },
     {
       "name": "ivysaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/2/"
+      "url": "https://pokeapi.co/api/v2/pokemon/2/",
+      "id": 1547254
     },
     {
       "name": "venusaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/3/"
+      "url": "https://pokeapi.co/api/v2/pokemon/3/",
+      "id": 1847251
     },
     {
       "name": "charmander",
-      "url": "https://pokeapi.co/api/v2/pokemon/4/"
+      "url": "https://pokeapi.co/api/v2/pokemon/4/",
+      "id": 2547251
     },
     {
       "name": "charmeleon",
-      "url": "https://pokeapi.co/api/v2/pokemon/5/"
+      "url": "https://pokeapi.co/api/v2/pokemon/5/",
+      "id": 1548251
     },
     {
       "name": "charizard",
-      "url": "https://pokeapi.co/api/v2/pokemon/6/"
+      "url": "https://pokeapi.co/api/v2/pokemon/6/",
+      "id": 1547258
     },
     {
       "name": "squirtle",
-      "url": "https://pokeapi.co/api/v2/pokemon/7/"
+      "url": "https://pokeapi.co/api/v2/pokemon/7/",
+      "id": 1547257
     },
     {
       "name": "wartortle",
-      "url": "https://pokeapi.co/api/v2/pokemon/8/"
+      "url": "https://pokeapi.co/api/v2/pokemon/8/",
+      "id": 1547259
     },
     {
       "name": "blastoise",
-      "url": "https://pokeapi.co/api/v2/pokemon/9/"
+      "url": "https://pokeapi.co/api/v2/pokemon/9/",
+      "id": 1547250
     },
     {
       "name": "caterpie",
-      "url": "https://pokeapi.co/api/v2/pokemon/10/"
+      "url": "https://pokeapi.co/api/v2/pokemon/10/",
+      "id": 1547252
     },
     {
       "name": "metapod",
-      "url": "https://pokeapi.co/api/v2/pokemon/11/"
+      "url": "https://pokeapi.co/api/v2/pokemon/11/",
+      "id": 1547253
     },
     {
       "name": "butterfree",
-      "url": "https://pokeapi.co/api/v2/pokemon/12/"
+      "url": "https://pokeapi.co/api/v2/pokemon/12/",
+      "id": 3547251
     },
     {
       "name": "weedle",
-      "url": "https://pokeapi.co/api/v2/pokemon/13/"
+      "url": "https://pokeapi.co/api/v2/pokemon/13/",
+      "id": 8547251
     },
     {
       "name": "kakuna",
-      "url": "https://pokeapi.co/api/v2/pokemon/14/"
+      "url": "https://pokeapi.co/api/v2/pokemon/14/",
+      "id": 9547251
     },
     {
       "name": "beedrill",
-      "url": "https://pokeapi.co/api/v2/pokemon/15/"
+      "url": "https://pokeapi.co/api/v2/pokemon/15/",
+      "id": 7547251
     },
     {
       "name": "pidgey",
-      "url": "https://pokeapi.co/api/v2/pokemon/16/"
+      "url": "https://pokeapi.co/api/v2/pokemon/16/",
+      "id": 1540251
     },
     {
       "name": "pidgeotto",
-      "url": "https://pokeapi.co/api/v2/pokemon/17/"
+      "url": "https://pokeapi.co/api/v2/pokemon/17/",
+      "id": 1047251
     },
     {
       "name": "pidgeot",
-      "url": "https://pokeapi.co/api/v2/pokemon/18/"
+      "url": "https://pokeapi.co/api/v2/pokemon/18/",
+      "id": 1547051
     },
     {
       "name": "rattata",
-      "url": "https://pokeapi.co/api/v2/pokemon/19/"
+      "url": "https://pokeapi.co/api/v2/pokemon/19/",
+      "id": 1547201
     },
     {
       "name": "raticate",
-      "url": "https://pokeapi.co/api/v2/pokemon/20/"
+      "url": "https://pokeapi.co/api/v2/pokemon/20/",
+      "id": 1547291
     },
     {
       "name": "turlulu",
-      "url": "https://moncul.fr"
-    },
-    {
-      "name": "turlulu",
-      "url": "https://moncul.fr"
+      "url": "https://turlulu.fr",
+      "id": 154251
     },
     {
       "name": "pimpim",
-      "url": "https://pimpimleBG.fr"
+      "url": "https://pimpimleBG.fr",
+      "id": 15251
     }
   ]
 }

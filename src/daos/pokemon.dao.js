@@ -12,7 +12,8 @@ const read = async () => {
       `${CURRENT_DIR}/src/fakedata/pokemon.data.json`,
       "utf8"
     );
-    data = JSON.parse(jsonData);
+    const result = JSON.parse(jsonData);
+    data = result.results;
   } catch (e) {
     console.error(e.message);
     error = `Cannot read Pokemons: ${e.message}`;
