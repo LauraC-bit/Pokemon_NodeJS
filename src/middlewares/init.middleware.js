@@ -3,7 +3,7 @@ import express from "express";
 
 const initMiddlewares = (app) => {
   // CORS
-  const corsOrigin = "*";
+  const corsOrigin = "*"; //url de ton site
 
   const corsOptions = {
     origin: corsOrigin,

@@ -1,44 +1,39 @@
 import fs from "node:fs/promises";
-import Data from "../fakedata/pokemon.data.js";
+import { PokemonDAO } from "../daos/pokemon.dao.js";
 
 const { readFile, writeFile } = fs;
 
 const CURRENT_DIR = process.cwd();
 
 const getAll = async (req, res) => {
-  let jsonData = null;
-
-  try {
-    jsonData = await readFile(
-      `${CURRENT_DIR}/src/fakedata/pokemon.data.json`,
-      "utf8"
-    );
-  } catch (e) {
-    console.error(e.message);
-  }
-
-  const data = JSON.parse(jsonData);
-
-  res.json({ Data: data.results });
+  const result = await PokemonDAO.read();
+  if (!!result.error) return res.status(400).json({ message: result.error });
+  return res.json({ Pokemons: result });
 };
 
-const getAll_ = (req, res) => {
-  const data = Data;
-  res.json({ Data: data });
-};
+const create = async (req, res) => {
+  const name = req.body.name;
+  const url = req.body.url;
 
-const create = (req, res) => {
-  const name = req.body.pokemonName;
-  const url = req.body.pokemonUrl;
+  let result = await PokemonDAO.read();
+  result = result.data;
+  if (!!result.error) return res.status(400).json({ message: result.error });
 
   const newPokemon = {
     name,
     url,
   };
 
-  Data.push(newPokemon);
+  console.log(result);
 
-  res.status(201).json({ message: "add", pokemonCreated: newPokemon });
+  result.results.push(newPokemon);
+
+  const error = await PokemonDAO.write(result);
+  if (!!error) return res.status(400).json({ message: error });
+  res.status(201).json({
+    message: "Pokemon added successfully",
+    pokemonCreated: newPokemon,
+  });
 };
 
 export const pokemonsController = {
