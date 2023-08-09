@@ -1,12 +1,21 @@
-import cors from "cors";
+import cors from "cors"; // verifier l'origine d'une requête
 import express from "express";
 
 const initMiddlewares = (app) => {
   // CORS
-  const corsOrigin = "*"; //url de ton site
+  const corsOrigin = process.env.CORS_ORIGIN || "*"; //url de ton site
 
   const corsOptions = {
-    origin: corsOrigin,
+    // si https://goole.com/
+    // origin: (origin, callback) => {
+    //   // alors indexOf === 1
+    //   if (whitelist.indexOf(origin) !== -1) {
+    //     callback(null, true);
+    //   } else {
+    //     callback(new Error("Not allowed by CORS"));
+    //   }
+    // },
+    origin: "*",
   };
 
   app.use(cors(corsOptions));
