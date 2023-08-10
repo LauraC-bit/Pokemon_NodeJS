@@ -33,7 +33,16 @@ const login = async (req, res) => {
   });
 };
 
+const signUp = async (req, res) => {
+  const { email, password, pseudo } = req.body;
+
+  await UserDAO.signUp(email, password, pseudo);
+
+  return res.json({ message: `sign up successfull` });
+};
+
 export const UserController = {
   getAll,
   login,
+  signUp,
 };

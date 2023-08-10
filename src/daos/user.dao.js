@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import User from "../model/user.model.js";
 
 const { readFile, writeFile } = fs;
 const CURRENT_DIR = process.cwd();
@@ -22,6 +23,25 @@ const read = async () => {
   }
 };
 
+const signUp = async (email, password, pseudo) => {
+  // premiere methode
+  // const user = {
+  //   email,
+  //   password,
+  //   pseudo,
+  // };
+  // await User.create(user);
+
+  // deuxieme methode
+  const user_ = new User({
+    email,
+    password,
+    pseudo,
+  });
+  await user_.save();
+};
+
 export const UserDAO = {
   read,
+  signUp,
 };
