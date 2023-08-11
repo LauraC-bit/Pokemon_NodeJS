@@ -1,6 +1,7 @@
 import { UserDAO } from "../daos/user.dao.js";
 import { jwtSign } from "../utils/jwt.utils.js";
 import { omit } from "../utils/object.utils.js";
+import { getUserInfos } from "../utils/user.utils.js";
 
 const getAll = async (req, res) => {
   const result = await UserDAO.read();
@@ -13,32 +14,45 @@ const login = async (req, res) => {
   const { email, pass } = req.body;
   const message = `Authentification failed`;
 
-  // <script> alert("hacked") </script>
+  // on recup le user et l'erreur depuis la BDD via son email
+  const { user, error } = await UserDAO.readByEmail(email);
+  // si erreur => envoi de l'erreur au client
+  if (!!error) return res.status(400).json({ message });
 
-  const result = await UserDAO.read();
-  if (!!result.error) return res.status(400).json({ message: result.error });
+  // verif de l'authentification
+  if (!user || user.password !== password)
+    return res.status(400).json({ message });
 
-  const { users } = result;
-
-  const user = users.find((u) => u.email === email);
-
-  if (!user || user.password !== pass) return res.status(400).json({ message });
-
+  // creation d'un token
   const token = jwtSign(user.id);
 
+  // envoi de la reponse finale avec message, user, et token
   return res.json({
     message: `login successfull`,
-    user: omit(user, "password"),
+    user: getUserInfos(user),
     token,
   });
 };
 
 const signUp = async (req, res) => {
-  const { email, password, pseudo } = req.body;
+  const { email, password, pseudo, tel, role } = req.body;
 
-  await UserDAO.signUp(email, password, pseudo);
+  const { result, error } = await UserDAO.signUp(
+    email,
+    password,
+    pseudo,
+    tel,
+    role
+  );
+  if (!result || !!error) return res.status(400).json({ message: error });
 
-  return res.json({ message: `sign up successfull` });
+  const token = jwtSign(result.id);
+
+  return res.json({
+    message: `sign up successfull`,
+    user: getUserInfos(result),
+    token,
+  });
 };
 
 export const UserController = {
